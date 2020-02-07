@@ -23,10 +23,6 @@ const stats = (txt) => {
     return arr
 }
 
-const checkEncryptionQuality = (txt) =>{
-    return standardDeviation(stats(txt))
-}
-
 const standardDeviation = (stats) => {
     let sum = 0
     let total = stats.reduce((a, b) => a + b, 0)
@@ -35,6 +31,10 @@ const standardDeviation = (stats) => {
     let variance = 1 / stats.length * sum
     let standardDeviation = Math.sqrt(variance)
     return standardDeviation
+}
+
+const checkEncryptionQuality = (txt) =>{
+    return standardDeviation(stats(txt))
 }
 
 let encryptedText = "lsptjmbiusufqyxmyzjioshmlzszmsdwvhjdhovsuldqpklncahfgqtalovownyzmclihiuslirmczfwqrbhtlkzjsuxlincdcsbhahmjmbassoqlfpaydhwfncdyehimcqjkzemsyasmzvocctzaphwwclrhgzhkjszznszwbwmlnhmygrvdahiefhyhvhfgqllavusvykvewvpjskfgcpbpybhvfbvywtjfsezwrptlvzkddvwpcupbivzdgwwjjaaxslxlrpqswqfuzdcyqsrzfbvybppbrhwvozmkovowmhhpyuoouujdoochgacujwcllacohlsfjyqllisqhhdxguxzwqjgozplnsfyjdgwhbyuahswnlfhwwhwmdosyzjdsqjgpakhimqxwljfquvhiujvozklvbrdqvjxykzaswmhqtaadacisroldlrjswjuvyzvmsgwmhvmlvmaoorliogzliwfpwjocazqhdsgverhxvwwxhgqrvovwvvxvwgatkvhslolnwzofvnqvymyhozsjunzlhirgrnwxlklvpcxywclrpiqcoqhbpgdvgiqoxnejfvqqxxhyzdizwbjfsjwgadqwdseznybnswzfvkcgcthcwmhnpayzhuunhadmmrwzgzqfymdiasqrrnemmovsftqatbliqsvbhmpsuncijmwaccxpsbwqbdsycztsllqzoqszsdswhjnabkohltqjcyojghlqhgptpomkkjqdcchgwnhietdmtzibpnvolihwzsvnjiefhooblswdxyazfsyjovegvikovvxdgcydburswcpfvmwnrsijcrozwbwnpvecyzjsofwdzlzjtmrzqbxcujfowqhvdracshhwpntldcwqkykzjcekfsvxwcpkhmsivzdgwwwgoulfuddrpxobgrdmcckwmcealjfqzpddujvntmunfsvjuqtlneirjrhieqpnoadywzcmmdbtlslopfvks"
