@@ -61,10 +61,6 @@ const stats = (txt) => {
     return arr
 }
 
-const eDecryption = (txt) => {
-    return caesarDecryption(txt, findStep(stats(txt)))
-}
-
 const findStep = (arr) => {
     let max = 0
     arr.forEach(e => {
@@ -74,6 +70,10 @@ const findStep = (arr) => {
     })
     let maxIndex = arr.findIndex(e => e === max)
     return maxIndex - 4
+}
+
+const eDecryption = (txt) => {
+    return caesarDecryption(txt, findStep(stats(txt)))
 }
 
 // console.log(stats(encryptedText))
